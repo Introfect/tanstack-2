@@ -8,7 +8,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      gcTime: 1000 * 60 * 60 * 24, // 24 hours
+      gcTime: 1000 * 60 * 60 * 24, 
     },
   },
 })
@@ -58,8 +58,6 @@ function Posts({
                     onClick={() => setPostId(post.id)}
                     href="#"
                     style={
-                      // We can access the query data here to show bold links for
-                      // ones that are cached
                       queryClient.getQueryData(['post', post.id])
                         ? {
                             fontWeight: 'bold',
